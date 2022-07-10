@@ -28,14 +28,7 @@ export default function App() {
       }
     >
       {data.pages.map((people) =>
-        people.results.map((item) => (
-          <PeopleCard
-            key={item.name}
-            name={item.name}
-            height={item.height}
-            birth_year={item.birth_year}
-          />
-        ))
+        people.results.map((item) => <PeopleCard key={item.name} {...item} />)
       )}
     </InfiniteScroll>
   );
